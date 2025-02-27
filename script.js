@@ -7,48 +7,54 @@ let start = document.querySelector(".jsStart");
 let reset = document.querySelector(".jsReset");
 
 // Initialize counts as 0
-let secondsCount, minutesCount, hoursCount;
-secondsCount = minutesCount = hoursCount = 0;
+let [secondsCount, minutesCount, hoursCount] = [0, 0, 0];
 
-// Runs timer on start button click and sets isCounting to true
 let isCounting = false;
 let interval;
 start.addEventListener("click", () => {
+  runTimer();
+  stopTimer();
+  resetTimer();
+});
+
+// Runs timer and displays time
+function runTimer() {
   if (!isCounting) {
     isCounting = true;
     interval = setInterval(() => {
       secondsCount++;
-      if (secondsCount < 60) {
-        singleDigitDisplay(secondsCount, seconds);
-      } else {
+      if (secondsCount == 60) {
         secondsCount = 0;
-        singleDigitDisplay(secondsCount, seconds);
         minutesCount++;
-        singleDigitDisplay(minutesCount, minutes);
       }
-      if (minutesCount === 60) {
+      if (minutesCount == 60) {
         minutesCount = 0;
-        singleDigitDisplay(minutesCount, minutes);
         hoursCount++;
-        singleDigitDisplay(hoursCount, hours);
       }
+      singleDigitDisplay(secondsCount, seconds);
+      singleDigitDisplay(minutesCount, minutes);
+      singleDigitDisplay(hoursCount, hours);
     }, 1);
   }
+}
 
-  // Pauses timer by stopping interval and returning isCounting to false
+// Pauses timer by stopping interval and returning isCounting to false
+function stopTimer() {
   stop.addEventListener("click", () => {
     clearInterval(interval);
     isCounting = false;
   });
+}
 
-  // Resets timer to initial state
+// Resets timer to initial state
+function resetTimer() {
   reset.addEventListener("click", () => {
     clearInterval(interval);
     isCounting = false;
     secondsCount = minutesCount = hoursCount = 0;
-    seconds.textContent = minutes.textContent = hours.textContent = "00"
+    seconds.textContent = minutes.textContent = hours.textContent = "00";
   });
-});
+}
 
 // Prepends a zero if the count is less than 10
 function singleDigitDisplay(unitCount, unit) {
