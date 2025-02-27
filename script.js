@@ -7,10 +7,10 @@ let start = document.querySelector(".jsStart");
 let reset = document.querySelector(".jsReset");
 
 // Initialize counts as 0
-let secondsCount = 0;
-let minutesCount = 0;
-let hoursCount = 0;
+let secondsCount, minutesCount, hoursCount;
+secondsCount = minutesCount = hoursCount = 0;
 
+// Runs timer on start button click and sets isCounting to true
 let isCounting = false;
 let interval;
 start.addEventListener("click", () => {
@@ -32,8 +32,22 @@ start.addEventListener("click", () => {
         hoursCount++;
         singleDigitDisplay(hoursCount, hours);
       }
-    }, 1000);
+    }, 1);
   }
+
+  // Pauses timer by stopping interval and returning isCounting to false
+  stop.addEventListener("click", () => {
+    clearInterval(interval);
+    isCounting = false;
+  });
+
+  // Resets timer to initial state
+  reset.addEventListener("click", () => {
+    clearInterval(interval);
+    isCounting = false;
+    secondsCount = minutesCount = hoursCount = 0;
+    seconds.textContent = minutes.textContent = hours.textContent = "00"
+  });
 });
 
 // Prepends a zero if the count is less than 10
