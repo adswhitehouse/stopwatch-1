@@ -34,7 +34,7 @@ function runTimer() {
       singleDigitDisplay(secondsCount, seconds);
       singleDigitDisplay(minutesCount, minutes);
       singleDigitDisplay(hoursCount, hours);
-    }, 1);
+    }, 1000);
   }
 }
 
