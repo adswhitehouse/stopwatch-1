@@ -55,6 +55,7 @@ select {
 /* Body */
 body {
   background-color: #eceaff;
+  font-family: "Roboto Mono", serif;
 }
 
 /* Stopwatch Container */
@@ -78,16 +79,18 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
+  gap: 3rem;
 }
 
 /* Timer */
 .timer {
-  font-size: 5rem;
+  font-size: 3.5rem;
   color: #fff;
 }
 
 .colon {
-  vertical-align: 0.5rem;
+  vertical-align: 7px;
+  margin-inline: 0.5rem;
 }
 
 /* Controls */
@@ -129,14 +132,15 @@ body {
     width: 100vw;
     height: 100vh;
     justify-content: space-evenly;
+    gap: 0;
     border-radius: 0;
   }
 
   .timer {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 
   .colon {
-    vertical-align: 0.4rem;
+    vertical-align: 5px;
   }
 }

@@ -7,6 +7,11 @@
   <title>Stopwatch</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="shortcut icon" href="./images/icons8-stopwatch-16.png" type="image/x-icon">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -17,13 +22,13 @@
   <div class="stopwatch-container">
     <div class="stopwatch">
       <p class="timer">
-        <span class="hours">00</span><span class="colon">:</span><span class="minutes">00</span><span
-          class="colon">:</span><span class="seconds">00</span>
+        <span class="jsHours">00</span><span class="colon">:</span><span class="jsMinutes">00</span><span
+          class="colon">:</span><span class="jsSeconds">00</span>
       </p>
       <div class="controls">
-        <button class="stop"><i class="fa-solid fa-stop"></i></button>
-        <button class="start"><i class="fa-solid fa-play"></i></button>
-        <button class="reset"><i class="fa-solid fa-rotate-left"></i></button>
+        <button class="stop jsStop"><i class="fa-solid fa-stop"></i></button>
+        <button class="start jsStart"><i class="fa-solid fa-play"></i></button>
+        <button class="reset jsReset"><i class="fa-solid fa-rotate-left"></i></button>
       </div>
     </div>
   </div>
